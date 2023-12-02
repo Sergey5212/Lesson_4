@@ -1,1 +1,4 @@
-[]
+[
+  "General project/test_main_page.py::test_guest_can_go_to_login_page",
+  "General project/test_main_page.py::test_guest_should_see_login_link"
+]

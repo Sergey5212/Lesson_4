@@ -1,6 +1,7 @@
 import pytest
 from test_negative_product_page import test_guest_cant_see_success_message
 from pages.product_page import ProductPage
+from pages.base_page import BasePage
 
 
 @pytest.mark.parametrize('link', ["http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer0",
@@ -14,26 +15,34 @@ from pages.product_page import ProductPage
                                   "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer8",
                                   "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer9"])
 def test_guest_can_add_product_to_basket(browser, link):
-    page = ProductPage(browser, link)
-    page.open()
-    page.should_be_page_object()
+    pages = ProductPage(browser, link)
+    pages.open()
+    pages.should_be_page_object()
 
 class TestUserAddToBasketFromProductPage():
     def test_user_can_add_product_to_basket(browser):
         link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
-        page = ProductPage(browser, link)
-        page.open()
-        page.press_button_and_code()
-        page.should_not_be_success_message()
+        pages = ProductPage(browser, link)
+        pages.open()
+        pages.press_button()
+        pages.press_code()
+        pages.should_not_be_success_message()
 
     def test_user_cant_see_success_message(browser):
         link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
-        page = ProductPage(browser, link)
-        page.open()
-        page.should_not_be_success_message()
+        pages = ProductPage(browser, link)
+        pages.open()
+        pages.should_not_be_success_message()
 
+class TestQuestLoginProductPage():
     def test_guest_should_see_login_link_on_product_page(browser):
         link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"
-        page = ProductPage(browser, link)
-        page.open()
-        page.should_be_login_link()
+        pages = ProductPage(browser, link)
+        pages.open()
+        pages.should_be_login_link()
+
+    def test_guest_can_go_to_login_page_from_product_page(browser):
+        link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"
+        pages = ProductPage(browser, link)
+        pages.open()
+        pages.go_to_login_page()
