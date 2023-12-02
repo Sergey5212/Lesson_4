@@ -1,0 +1,5 @@
+{
+  "test_product_page.py": true,
+  "test_product_page.py::TestUserAddToBasketFromProductPage::test_user_cant_see_success_message": true,
+  "test_product_page.py::TestUserAddToBasketFromProductPage::test_guest_should_see_login_link_on_product_page": true
+}
