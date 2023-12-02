@@ -8,6 +8,10 @@ class AddingToLocators():
     PRICE_PRODUCT = (By.CSS_SELECTOR, 'div.col-sm-6.product_main > p.price_color')
     PRICE_PRODUCT_IN_CART = (By.CSS_SELECTOR, '.alertinner p strong')
 
+class BasePageLocators():
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+
 class LoginPageLocators():
     LOGIN_EMAIL = (By.NAME, "login-username")
     LOGIN_PASSWORD = (By.NAME, "login-password")

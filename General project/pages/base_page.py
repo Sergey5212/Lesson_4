@@ -4,6 +4,7 @@ from selenium.common.exceptions import NoAlertPresentException
 from math import *
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
+from .locators import BasePageLocators
 
 
 class BasePage():
@@ -33,6 +34,13 @@ class BasePage():
         except TimeoutException:
             return True
         return False
+
+    def go_to_login_page(self):
+        link = self.browser.find_element(*BasePageLocators.LOGIN_LINK_INVALID)
+        link.click()
+
+    def should_be_login_link(self):
+        assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not presented"
 
     def solve_quiz_and_get_code(self):
         alert = self.browser.switch_to.alert
