@@ -25,4 +25,4 @@ class MainPageLocators():
 
 class ViewBasketPage():
     VIEW_BASKET = (By.CSS_SELECTOR, ".btn-group > a.btn-default")
-    BASKET_ZERO = (By.CSS_SELECTOR, "div.alertinner > p: nth - child(1)")
+    BASKET_ZERO = (By.CSS_SELECTOR, "#content_inner > p")

@@ -1,3 +1,4 @@
+from pages.locators import ViewBasketPage
 from pages.login_page import LoginPage
 from pages.main_page import MainPage
 
@@ -15,3 +16,10 @@ def test_guest_should_see_login_link(browser):
     pages = MainPage(browser, link)
     pages.open()
     pages.should_be_login_link()
+
+def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
+    link = "http://selenium1py.pythonanywhere.com"
+    pages = MainPage(browser, link)
+    pages.open()
+    browser.find_element(*ViewBasketPage.VIEW_BASKET).click()
+    assert "Your basket is empty" in browser.find_element(*ViewBasketPage.BASKET_ZERO).text, "The product is in the basket"
