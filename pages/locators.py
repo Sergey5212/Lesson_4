@@ -1,5 +1,5 @@
 from selenium.webdriver.common.by import By
-from selenium import webdriver
+
 
 class AddingToLocators():
     ADD_TO_BASKET = (By.CSS_SELECTOR, '.btn-add-to-basket')
@@ -26,3 +26,5 @@ class MainPageLocators():
 class ViewBasketPage():
     VIEW_BASKET = (By.CSS_SELECTOR, ".btn-group > a.btn-default")
     BASKET_ZERO = (By.CSS_SELECTOR, "#content_inner > p")
+    BASKET_TITLE = (By.CSS_SELECTOR, ".basket-title")
+

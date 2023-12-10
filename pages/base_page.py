@@ -1,4 +1,5 @@
 from math import *
+
 from selenium.common.exceptions import NoAlertPresentException
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from selenium.webdriver.support import expected_conditions as EC
@@ -38,7 +39,9 @@ class BasePage():
     def go_to_login_page(self):
         link = self.browser.find_element(*BasePageLocators.LOGIN_LINK)
         link.click()
-    def go_to_basket(self):
+
+
+    def go_to_basket_page(self):
         link = self.browser.find_element(*ViewBasketPage.VIEW_BASKET)
         link.click()
 
