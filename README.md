@@ -1,1 +1,1 @@
-Review report for Lesson 4 of Automated Testing
+Final project for the course "Test Automation using Selenium and Python"
