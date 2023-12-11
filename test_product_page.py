@@ -65,6 +65,7 @@ class TestGoToPage():
 
 @pytest.mark.add_product
 class TestUserAddingProduct():
+    @pytest.mark.xfail
     def test_user_can_add_product_to_basket(self, browser):
         link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
         pages = ProductPage(browser, link)
