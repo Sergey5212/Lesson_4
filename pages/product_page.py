@@ -3,6 +3,7 @@ from .locators import AddingToLocators
 
 
 class ProductPage(BasePage):
+
     def press_button(self):
         self.browser.find_element(*AddingToLocators.ADD_TO_BASKET).click()
 
