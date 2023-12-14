@@ -5,6 +5,7 @@ from .pages.product_page import ProductPage
 link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
 
 
+@pytest.mark.need_review
 @pytest.mark.parametrize('link', ["http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer0",
                                   "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer1",
                                   "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer2",
@@ -47,6 +48,7 @@ class TestCantSeeSuccessMessage():
         page.presence_of_element_located()
 
 
+@pytest.mark.need_review
 @pytest.mark.go_to_login_from_the_main_page
 class TestGoToPage():
 
@@ -61,6 +63,7 @@ class TestGoToPage():
         pages.go_to_login_page()
 
 
+@pytest.mark.need_review
 @pytest.mark.add_product
 class TestUserAddingProduct():
     @pytest.mark.xfail
